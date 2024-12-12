@@ -1,0 +1,17 @@
+{
+	"ulid": "01JETFSQ5Y7WQAPKMEHRATBHN2",
+	"minTime": 1733897490640,
+	"maxTime": 1733904000000,
+	"stats": {
+		"numSamples": 7392,
+		"numSeries": 528,
+		"numChunks": 528
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01JETFSQ5Y7WQAPKMEHRATBHN2"
+		]
+	},
+	"version": 1
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_package = "com.example.hotelgestion.grpc";
+option java_multiple_files = true;
+
+package com.example.hotelgestion;
+
+service ReservationService {
+  rpc getAllReservations (Empty) returns (ReservationList);
+  rpc getReservation (ReservationId) returns (ReservationResponse);
+  rpc createReservation (CreateReservationRequest) returns (ReservationResponse);
+  rpc deleteReservation (ReservationId) returns (DeleteResponse);
+  rpc updateReservation (ReservationResponse) returns (ReservationResponse);
+}
+
+message Empty {}
+message ReservationId {
+  int64 id = 1;
+}
+message ReservationResponse {
+  int64 id = 1;
+  string dateDebut = 2;
+  string dateFin = 3;
+  Client client = 4;
+  Chambre chambre = 5;
+  string preferences = 6;
+}
+message ReservationList {
+  repeated ReservationResponse reservations = 1;
+}
+message CreateReservationRequest {
+  string dateDebut = 1;
+  string dateFin = 2;
+  int64 clientId = 3;
+  int64 chambreId = 4;
+  string preferences = 5;
+}
+message DeleteResponse {
+  bool success = 1;
+}
+message Client {
+  int64 id = 1;
+  string nom = 2;
+}
+message Chambre {
+  int64 id = 1;
+  string numero = 2;
+} 

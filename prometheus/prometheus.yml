@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 5s  # Set the scrape interval to 15 seconds
+  evaluation_interval: 10s  # Set the evaluation interval to 10 seconds
+
+scrape_configs:
+  # Scrape metrics from node_exporter
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']  # node_exporter target
+  
+  # Scrape metrics from your backend
+  - job_name: 'backend'
+    metrics_path: '/actuator/prometheus'  # Specify the custom metrics path
+    static_configs:
+      - targets: ['localhost:8080']  # Your backend's metrics endpoint
+
+    # Uncomment the following tls_config section if your backend is serving HTTPS metrics
+    # tls_config:
+    #   insecure_skip_verify: true  # Only if you want to skip TLS verification

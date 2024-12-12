@@ -1,0 +1,17 @@
+{
+	"ulid": "01JETSZRVN3172H7NZH1TBWZQW",
+	"minTime": 1733904000000,
+	"maxTime": 1733911200000,
+	"stats": {
+		"numSamples": 363602,
+		"numSeries": 681,
+		"numChunks": 2476
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01JETSZRVN3172H7NZH1TBWZQW"
+		]
+	},
+	"version": 1
+}
